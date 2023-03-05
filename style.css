@@ -1,0 +1,203 @@
+
+.wrapper {
+    display: grid;
+    grid-template: 33px 260px / 260px;
+    background-color: #BDBDBD;
+    border: 2px outset #EEEEEE;
+    padding: 7px;
+    gap: 9px;
+    width: 260px;
+}
+
+.header {
+    width: 256px;
+    height: 33px;
+    background-color: #C0C0C0;
+    display: grid;
+    grid-template-columns: 51px 153px 51px;
+    border: 2px inset #EEEEEE;
+}
+
+.counter {
+    display: grid;
+    grid-template-columns: repeat(3, 13px);
+    padding: 5px 6px;
+    border: 0;
+}
+
+.face {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: #C0C0C0;  
+    border: 0; 
+}
+
+.timer {
+    display: grid;
+    grid-template-columns: repeat(3, 13px);
+    padding: 5px 6px;
+    border: 0;
+}
+
+.field {
+    display: grid;
+    grid-template: repeat(16, 16px) / repeat(16, 16px);
+    border: 2px inset #EEEEEE;
+}
+
+.digit {
+    background-image: url(img/minesweeper-sprites.png);
+    background-repeat: no-repeat;
+}
+
+.num1 {
+    background-repeat: no-repeat;
+    background-position: left top;
+}
+
+.num2 {
+    background-repeat: no-repeat;
+    background-position: -14px top;
+}
+
+.num3 {
+    background-repeat: no-repeat;
+    background-position: -28px top;
+}
+
+.num4 {
+    background-repeat: no-repeat;
+    background-position: -42px top;
+}
+
+.num5 {
+    background-repeat: no-repeat;
+    background-position: -56px top;
+}
+
+.num6 {
+    background-repeat: no-repeat;
+    background-position: -70px top;
+}
+
+.num7 {
+    background-repeat: no-repeat;
+    background-position: -84px top;
+}
+
+.num8 {
+    background-repeat: no-repeat;
+    background-position: -98px top;
+}
+
+.num9 {
+    background-repeat: no-repeat;
+    background-position: -112px top;
+}
+
+.num0 {
+    background-repeat: no-repeat;
+    background-position: -126px top;
+}
+
+button.btn{
+    background-image: url(img/minesweeper-sprites.png);
+    background-repeat: no-repeat;
+    height: 26px;
+    width: 25px;
+}
+
+button.face_happy {
+    background-position: -3px -26px;
+}
+
+button.face_happy_down {
+    background-position: -30px -26px;
+}
+
+button.face_wow{
+    background-position: -57px -26px;
+}
+
+button.face_win{
+    background-position: -84px -26px;
+}
+
+button.face_lose{
+    background-position: -111px -26px;
+} 
+
+
+button.field {
+    background-image: url(img/minesweeper-sprites.png);
+    background-repeat: no-repeat;
+    height: 16px;
+    width: 16px;
+    padding: 0;
+    border: 0;
+}
+
+button.cell {
+    background-position: left -51px;
+}
+
+button.bomb_red {
+    background-position: -102px -51px;
+}
+
+button.bomb_white {
+    background-position: -85px -51px;
+}
+
+button.bomb_cross {
+    background-position: -119px -51px;
+}
+
+button.empty {
+    background-position: -17px -51px;
+}
+
+button.num-1 {
+    background-position: left bottom;
+}
+
+button.num-2 {
+    background-position: -17px bottom;
+}
+
+button.num-3 {
+    background-position: -34px bottom;
+}
+
+button.num-4 {
+    background-position: -51px bottom;
+}
+
+button.num-5 {
+    background-position: -68px bottom;
+}
+
+button.num-6 {
+    background-position: -85px bottom;
+}
+
+button.num-7 {
+    background-position: -102px bottom;
+}
+
+button.num-8 {
+    background-position: -119px bottom;
+}
+
+button.flag {
+    background-position: -34px -51px;
+}
+
+button.question {
+    background-position: -51px -51px;
+}
+
+button.question_down {
+    background-position: -69px -51px;
+}
