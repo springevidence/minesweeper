@@ -24,10 +24,14 @@ function startGame(width, height, bombsNumber) {
             if (e.target.matches('.cell') || e.target.matches('.question')){
                 startTime = 0;
                 timeInterval = setInterval(updateClock, 1000);
-                bombsIndex = [...Array(cellsCount)
-                    .keys()]
-                    .sort(() => Math.random() - 0.5)
-                    .slice(0, bombsNumber);
+
+                // using Fisher-Yates shuffle algorithm to create array of bombs
+                const indices = Array.from(Array(cellsCount).keys());
+                for (let i = indices.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [indices[i], indices[j]] = [indices[j], indices[i]];
+                }
+                bombsIndex = indices.slice(0, bombsNumber);
 
                 let firstIndex = cells.indexOf(e.target);
 
