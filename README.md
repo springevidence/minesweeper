@@ -32,3 +32,4 @@ Run the application
 - add different difficulty levels
 - optimize the algorithm for distributing mines on the field
 - do some refactoring
+- start new game without reloading page
