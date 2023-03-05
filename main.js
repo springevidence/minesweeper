@@ -30,7 +30,6 @@ function startGame(width, height, bombsNumber) {
                     .slice(0, bombsNumber);
 
                 let firstIndex = cells.indexOf(e.target);
-                console.log(bombsIndex);
 
                 if (bombsIndex.includes(firstIndex)) {
                     let newIndex;
@@ -54,7 +53,7 @@ function startGame(width, height, bombsNumber) {
     field.addEventListener('contextmenu', (e) => {
         e.preventDefault();
         if (e.target.disabled) {
-            return
+            return;
         }
         if (e.target.matches('.cell')) {
             e.target.classList.replace('cell', 'flag');
@@ -79,11 +78,9 @@ function startGame(width, height, bombsNumber) {
         e.target.classList.replace('face_happy_down', 'face_happy');
     });
     
-
     happy.addEventListener('click', () => {
         location.reload();
     });
-    
 
     field.addEventListener('mousedown', (e) => {
         happy.classList.replace('face_happy', 'face_wow');
@@ -100,7 +97,7 @@ function startGame(width, height, bombsNumber) {
         e.target.classList.replace('question_down', 'question');
     });
 
-    function caclCellStatus(row, column) {
+    function calcCellStatus(row, column) {
         let count = 0;
         for (let i = -1; i <= 1; i++) {
             for (let j = -1; j <= 1; j++) {
@@ -113,23 +110,20 @@ function startGame(width, height, bombsNumber) {
     }
 
     function revealCells(row, column) {
-        index = row * width + column;
+        let index = row * width + column;
         const cell = cells[index];
-        const cellStatus = caclCellStatus(row, column);
+        const cellStatus = calcCellStatus(row, column);
         if (isBomb(row, column)) {
-            cell.classList = '';
-            cell.classList.add('bomb_red', 'field');
+            cell.className = 'bomb_red field'
             gameOver();
         } else if (cellStatus > 0) {
-            cell.classList = '';
-            cell.classList.add(`num-${cellStatus}`, 'field');
+            cell.className = `num-${cellStatus} field`
             if (!revealedCells.has(cell)) {
                 closedCount--;
                 revealedCells.add(cell);
             }        
         } else if (cell.matches('.cell') || cell.matches('.question')) {
-            cell.classList = '';
-            cell.classList.add('empty', 'field');
+            cell.className = 'empty field'
             if (!revealedCells.has(cell)) {
                 closedCount--;
                 revealedCells.add(cell);
@@ -201,8 +195,7 @@ function startGame(width, height, bombsNumber) {
 
         for (let i = 0; i < 3; i++) {
             const digit = timeString.charAt(i);
-            numbers[i].classList = ''
-            numbers[i].classList.add('digit', `num${digit}`);
+            numbers[i].className = `digit num${digit}`;
         }
     }
 
@@ -215,8 +208,7 @@ function startGame(width, height, bombsNumber) {
 
         for (let i = 0; i < 3; i++) {
             const digit = bombString.charAt(i);
-            numbers[i].classList = ''
-            numbers[i].classList.add('digit', `num${digit}`);
+            numbers[i].className = `digit num${digit}`;
         }
     }
 }
